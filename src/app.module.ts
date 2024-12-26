@@ -18,6 +18,17 @@ import { MessagesWsModule } from './messages-ws/messages-ws.module';
     ConfigModule.forRoot(),
 
     TypeOrmModule.forRoot({
+
+      //configuracion para HEROKU
+      ssl: process.env.STAGE === 'prod' ? true : false,
+      extra: {
+        ssl: process.env.STAGE === 'prod' 
+      ? {rejectUnauthorized: false}
+      : null,
+      },
+      //Fin de configuracion para HEROKU
+      
+
       type: 'postgres',
       host: process.env.DB_HOST,
       port: parseInt(process.env.DB_PORT),
