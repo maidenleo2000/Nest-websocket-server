@@ -4,7 +4,7 @@
 
 
 
-# WebSocket Srerver
+# WebSocket Server
 
 1. Clonar proyecto
 
